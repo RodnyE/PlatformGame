@@ -27,6 +27,7 @@ function OnStart () {
   document.getElementById("pixi-container").appendChild(view);
   
   layer1 = new Container();
+  fpsText = new PIXI.Text("");
   
   // mundo
   world = new World({
@@ -74,6 +75,10 @@ function OnLoad () {
   bg3 = world.createBg("bg3", 1);
   scene.addChild(layer1);
   fg1 = world.createBg("fg1", 1.5);
+  fg1.tileHeight = world.height * fg1.relativeScaleY;
+  
+  scene.addChild(fpsText);
+  
   
   let tilesHeight = toTile(world.height);
   

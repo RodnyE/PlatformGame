@@ -7,10 +7,11 @@ World.prototype.createBg = function (textureId, scale) {
   let texture = resources[textureId].texture;
   let tiling = new TilingSprite(texture);
   
-  
+  tiling.relativeScaleY = scale;
   tiling.x = 0;
   tiling.y = 0;
-  tiling.tileHeight = canvasHeight;
+  tiling.tileHeight = canvasHeight * scale;
+  //tiling.tileHeight = world.height * scale;
   tiling.updateTileWidthRatio();
   tiling.width = canvasWidth;
   tiling.height = canvasHeight;

@@ -1,4 +1,8 @@
 // bucle
+let lastTime = Date.now();
+let fps = 0;
+let loopCount = 0;
+
 function OnLoop (delta) {
 	let pjs = world.pjs;     // personajes
   let plats = world.plats; // superficies
@@ -20,12 +24,11 @@ function OnLoop (delta) {
     if (pj.vx) {
       if (pj.vx > 0) pj.scale.x = 1;
       if (pj.vx < 0) pj.scale.x = -1;
-      pj.width = pj.w;
       
       pj.setTextures(resources[pj.pjTexture + "_mov"]);
     }
     else pj.setTextures(resources[pj.pjTexture + "_quiet"]);
-  
+    pj.width = pj.w;
     
     // gravedad
     pj.vy += gravity / density;
@@ -73,5 +76,15 @@ function OnLoop (delta) {
   bg2.tileX = - camera.x * 0.4;
   bg3.tileX = - camera.x * 0.9;
   fg1.tileX = - camera.x * 1.6;
-  fg1.tileY = (- camera.y + fg1._offsetY) * 1.2;
+  /*bg2.tileY = (- camera.y + bg2._offsetY) * bg2.relativeScaleY;
+  bg3.tileY = (- camera.y + bg3._offsetY) * bg3.relativeScaleY;*/
+  fg1.tileY = (- camera.y + fg1._offsetY) * fg1.relativeScaleY;
+  
+  let time = Date.now();
+  
+  fps = Math.floor(1000 / (time - lastTime));
+  if (loopCount % 10 == 0) fpsText.text = "FPS: " + fps;
+  
+  lastTime = time;
+  loopCount ++;
 }
