@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/index.css">
+  <script src="libs/eruda.min.js" onload="eruda.init()"></script>
+  <script src="libs/pixi-legacy.min.js"></script>
+  <script src="js/pixi-extends/init.js"></script>
+  <script src="js/pixi-extends/DisplayObject.js"></script>
+  <script src="js/pixi-extends/Sprite.js"></script>
+  <script src="js/pixi-extends/AnimatedSprite.js"></script>
+  <script src="js/pixi-extends/TilingSprite.js"></script>
+  <script src="js/pixi-extends/Loader.js"></script>
+
+  <script src="js/controls/move.js"></script>
+  <script src="js/controls/action.js"></script>
+
+  <script src="js/world/world.js"></script>
+  <script src="js/world/world-bg.js"></script>
+  <script src="js/world/world-pjs.js"></script>
+  <script src="js/world/world-plat.js"></script>
+  
+  <script src="js/world/camera.js"></script>
+  
+  <script src="js/physics/collide.js"></script>
+  <script src="js/physics/overlap.js"></script>
+
+  <script src="config.js"></script>
+  <script src="js/loop.js"></script>
+  <script src="js/index.js"></script>
+</head>
+
+<body onload="OnStart()">
+
+  <!-- PIXI -->
+  <div id="pixi-container"></div>
+
+  <!-- controles de movimiento -->
+  <div id="controls-left" class="controls-box">
+    <div id="move-back" class="control">
+      ⬅️
+    </div>
+    <div id="move-front" class="control">
+      ➡️
+    </div>
+  </div>
+
+  <!-- controles de accion -->
+  <div id="controls-right" class="controls-box">
+    <div id="move-up" class="control">
+      ⬆️
+    </div>
+    <div id="action" class="control">
+      ⚔️
+    </div>
+  </div>
+
+
+</body>
+</html>
