@@ -36,14 +36,24 @@
 .control {
 	width: 10vw;
 	height: 10vw;
-	background: blue;
+	background: url("../assets/img/btn-move.png");
+	background-size: 100% 100%;
+	image-rendering: pixelated;
 	margin: 5px;
 	
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-size: 5vw;
+	transition: filter 0.1s;
 }
+.control:active {
+  filter: opacity(0.5) grayscale(1);
+}
+
+#move-back {transform: scaleX(-1)}
+#move-up {transform: rotate(-90deg)}
+#action-atack {background-image: url("../assets/img/btn-atack.png")}
 
 #controls-left {
 	bottom: 0;
