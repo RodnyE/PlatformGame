@@ -25,6 +25,7 @@ function initMovementControls () {
   $btnUp.addEventListener("touchstart", function(){
     if (!player.isJumping) {
       player.isJumping = true;
+      jumpAudio.play();
       moveUp(player);
     }
   });

@@ -46,6 +46,9 @@ function OnStart () {
   
   // música de entorno
   bgAudio = new Audio("assets/snd/bg.mp3");
+  jumpAudio = new Audio("assets/snd/jump.mp3");
+  
+  bgAudio.volume = 0.2;
   bgAudio.onended = bgAudio.play.bind(bgAudio);
   addEventListener("touchstart", bgAudio.onended)
   
@@ -56,8 +59,10 @@ function OnStart () {
   loader.add("bg2", "assets/img/bg/bg2n.png");
   loader.add("bg3", "assets/img/bg/bg3n.png");
   loader.add("fg1", "assets/img/bg/fg1n.png");
-  loader.addAnimation("pj_01_mov", "assets/img/pjs/pj01/mov-000", 4, 0.2);
-  loader.addAnimation("pj_01_quiet", "assets/img/pjs/pj01/quiet-000", 2, 0.07);
+  loader.addAnimation("pj_01_mov", "assets/img/pjs/pj_01/mov-000", 4, 0.2);
+  loader.addAnimation("pj_01_quiet", "assets/img/pjs/pj_01/quiet-000", 4, 0.07);
+  loader.addAnimation("pj_01_jump", "assets/img/pjs/pj_01/jump-000", 4, 0.07);
+  loader.addAnimation("pj_01_action", "assets/img/pjs/pj_01/action-000", 4, 0.07);
   
   loader.load( OnLoad );
 }

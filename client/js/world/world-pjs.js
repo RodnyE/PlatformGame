@@ -15,8 +15,10 @@ World.prototype.createPj = function (data = {}) {
   
   pj.vx = 0;
   pj.vy = 0;
+  
   pj.speed = 2;
   pj.jumpSpeed = 7;
+  
   pj.bounciness = 0.1;
   pj.id = pjId;
   this.scene.addChild(pj);

@@ -21,5 +21,5 @@ World.prototype.createBg = function (textureId, scale) {
   tiling.tilePosition.y = - offsetY;
   
   scene.addChild(tiling);
-  return tiling
+  return tiling;
 };

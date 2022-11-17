@@ -20,15 +20,11 @@ function OnLoop (delta) {
     pj.x += pj.vx * resolution;
     pj.y += pj.vy * resolution;
     
-    // animar personaje
+    // cambair direccion de personaje
     if (pj.vx) {
       if (pj.vx > 0) pj.scale.x = 1;
       if (pj.vx < 0) pj.scale.x = -1;
-      
-      pj.setTextures(resources[pj.pjTexture + "_mov"]);
     }
-    else pj.setTextures(resources[pj.pjTexture + "_quiet"]);
-    pj.width = pj.w;
     
     // gravedad
     pj.vy += gravity / density;
@@ -59,12 +55,46 @@ function OnLoop (delta) {
           // colisión en Y
           pj.vy *= - pj.bounciness;
           pj.isJumping = false;
+          pj.isFalling = false;
           if (Math.abs(pj.vy) < 0.1) pj.vy = 0;
         }
         
       }
     }
     
+    // ANIMAR PERSONAJE
+    // comprobar si no está en contacto con el suelo
+    if (Math.abs(pj.vy) > 1) {
+      
+      pj.setTextures(resources[pj.pjTexture + "_jump"]);
+      
+      if (pj.vy > 1) {
+        // está callendo!
+        pj.isFalling = true;
+        pj.isJumping = true;
+        pj.gotoAndStop(2);
+      }
+      else {
+        // está subiendo!
+        pj.isJumping = true;
+        pj.setTextures(resources[pj.pjTexture + "_jump"]);
+        pj.gotoAndStop(1);
+      }
+    }
+    else {
+      pj.play();
+      if (pj.vx) {
+        // está caminando!
+        pj.setTextures(resources[pj.pjTexture + "_mov"]);
+      }
+      else {
+        // está detenido!
+        pj.setTextures(resources[pj.pjTexture + "_quiet"]);
+      }
+    }
+    
+    // redimensionar personaje
+    pj.width = pj.w;
   
 	}
 	
