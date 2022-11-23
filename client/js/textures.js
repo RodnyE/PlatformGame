@@ -20,7 +20,7 @@ function loadResources (callback) {
     
     // slime
     .addAnimation("slime_quiet", "assets/img/ens/slime/quiet-000", 2, 0.07)
-    .addAnimation("slime_jump", "assets/img/ens/slime/quiet-000", 3, 0.07)
+    //.addAnimation("slime_jump", "assets/img/ens/slime/quiet-000", 3, 0.07)
     
     
     // al terminar 
