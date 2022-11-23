@@ -1,5 +1,6 @@
 
-// obtener direccion de colisicion
+// obtener direccion de colisición
+
 function rectangleCollision (r1, r2, back) {
   let overlap = rectangleOverlap(r1, r2);
   

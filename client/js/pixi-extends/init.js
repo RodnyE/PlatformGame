@@ -1,4 +1,6 @@
 
+/// @class Rectangle
+Rectangle = PIXI.Rectangle;
 
 /// @class Graphics
 Graphics = PIXI.Graphics;

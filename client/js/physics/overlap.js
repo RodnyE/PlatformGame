@@ -34,8 +34,8 @@ function rectangleOverlap(r1, r2) {
   return {
     dx: dx, // distancia de figuras en x
     dy: dy, // distancia de figuras en y
-    x: overlapX,
-    y: overlapY,
+    x: overlapX + 0.1,
+    y: overlapY + 0.1,
     collide: collide,
   }
 }

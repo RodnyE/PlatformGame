@@ -8,7 +8,8 @@ Sprite = PIXI.Sprite;
 Object.defineProperty(Sprite.prototype,
   "aspectRatio", {
     get: function() {
-      let aspectRatio = this.texture.height / this.texture.width;
+      let texture = this.texture
+      let aspectRatio = texture.height / texture.width;
       this._aspectRatio = aspectRatio;
       return aspectRatio;
     }

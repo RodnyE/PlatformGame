@@ -1,18 +1,4 @@
 
-function moveBack (pj) {
-	pj.vx = -pj.speed;
-}
-
-
-function moveFront (pj) {
-	pj.vx = pj.speed;
-}
-
-// saltar
-function moveUp (pj) {
-	pj.vy = -pj.jumpSpeed;
-}
-
 
 // buttons
 function initMovementControls () {
@@ -25,26 +11,24 @@ function initMovementControls () {
   $btnUp.addEventListener("touchstart", function(){
     if (!player.isJumping) {
       player.isJumping = true;
+      player.vy = - player.jumpSpeed;
       jumpAudio.play();
-      moveUp(player);
     }
   });
   
   // boton avanzar
   $btnFront.addEventListener("touchstart", function(){
-    player.isMoving = true;
-    moveFront(player);
+    player.moving = player.speed;
   });
   $btnFront.addEventListener("touchend", function(){
-    player.isMoving = false;
+    player.moving = 0;
   });
   
   // boton retroseder
   $btnBack.addEventListener("touchstart", function(){
-    player.isMoving = true;
-    moveBack(player);
+    player.moving = - player.speed;
   });
   $btnBack.addEventListener("touchend", function(){
-    player.isMoving = false;
+    player.moving = 0;
   });
 }

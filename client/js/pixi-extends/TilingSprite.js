@@ -1,5 +1,6 @@
 /*
  * Extender PIXI.TilingSprite
+ * #FIXME ~ se buguea al usar CanvasRenderer
  */
  
 TilingSprite = PIXI.TilingSprite;

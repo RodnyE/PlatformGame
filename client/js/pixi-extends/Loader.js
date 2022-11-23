@@ -21,6 +21,8 @@ Loader.prototype.addAnimation = function (name, url, length, animationSpeed) {
   list.name = name;
   list.animationSpeed = animationSpeed;
   resources[name] = list;
+  
+  return this;
 }
 
 

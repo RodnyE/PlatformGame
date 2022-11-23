@@ -19,7 +19,6 @@ function OnStart () {
   scene = pixi.stage;
   renderer = pixi.renderer;
   ticker = pixi.ticker;
-  loader = PIXI.Loader.shared;
   resources = PIXI.Loader.shared.resources;
   
   view = renderer.view;
@@ -52,19 +51,8 @@ function OnStart () {
   bgAudio.onended = bgAudio.play.bind(bgAudio);
   addEventListener("touchstart", bgAudio.onended)
   
-  
   // cargar recursos
-  loader.add("box", "assets/img/box.png");
-  loader.add("bg1", "assets/img/bg/bg1n.png");
-  loader.add("bg2", "assets/img/bg/bg2n.png");
-  loader.add("bg3", "assets/img/bg/bg3n.png");
-  loader.add("fg1", "assets/img/bg/fg1n.png");
-  loader.addAnimation("pj_01_mov", "assets/img/pjs/pj_01/mov-000", 4, 0.2);
-  loader.addAnimation("pj_01_quiet", "assets/img/pjs/pj_01/quiet-000", 4, 0.07);
-  loader.addAnimation("pj_01_jump", "assets/img/pjs/pj_01/jump-000", 4, 0.07);
-  loader.addAnimation("pj_01_action", "assets/img/pjs/pj_01/action-000", 4, 0.07);
-  
-  loader.load( OnLoad );
+  loader = loadResources( OnLoad );
 }
 
 
@@ -97,24 +85,14 @@ function OnLoad () {
   ];
   
   
+  
   // generar plataformas a partir de la lista
-  for (let item of platsList) {
-    world.createPlatform({
-      tX: item[0],
-      tY: item[1],
-      tW: item[2],
-      tH: item[3],
-    });
-  }
+  for (let item of platsList)
+    world.createPlatform.apply(world, item);
   
   // jugador
-  player = world.createPj({
-    texture: "pj_01"
-  });
+  player = world.createPj("pj_01", 1.5);
   player.anchor.set(0.5);
-  player.width = toPx(2);
-  player.w = player.width;
-  player.height = toPx(3);
   player.x = toPx(5);
   player.y = toPx(5) - player.xAnchorOffset;
   

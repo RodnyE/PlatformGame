@@ -1,11 +1,10 @@
-
 APP_NAME = "TerraPixel";
 APP_VERSION = "0.0.1a";
 
 resolution = 2;
 forceCanvas = false;
 
-
+APP_NAME.charCodeAt(0)
 virtualHeight = 200;
 virtualWidth = Math.max(innerWidth, innerHeight) * (virtualHeight / Math.min(innerWidth, innerHeight));
 canvasWidth = virtualWidth * resolution;
