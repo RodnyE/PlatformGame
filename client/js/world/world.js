@@ -2,19 +2,17 @@
  * class World
  */
 
-function toTile (px) {return px / tileSize}
-function toPx (tile) {return tile * tileSize}
 
 
 World = function (data = {}) {
 
-  this.width = toPx(data.tW || 50);
-  this.height = toPx(data.tH || 50);
+  this.width = tl2px(data.tW || 50);
+  this.height = tl2px(data.tH || 50);
 
   this.pjs = data.pjs || {};
   this.obj = data.obj || {};
   this.plats = data.plats || {};
 
-  this.scene = data.scene; // || window.scene;
+  this.scene = data.scene;
   this.elementsCreated = 0;
 };

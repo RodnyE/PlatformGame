@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/screen.css">
+  <link rel="stylesheet" href="css/controls.css">
+  
   <script src="libs/eruda.min.js" onload="eruda.init()"></script>
   <script src="libs/pixi-legacy.min.js"></script>
   <script src="js/pixi-extends/init.js"></script>
@@ -20,34 +23,50 @@
   <script src="js/world/world.js"></script>
   <script src="js/world/world-bg.js"></script>
   <script src="js/world/world-pjs.js"></script>
+  <script src="js/world/world-ens.js"></script>
   <script src="js/world/world-plat.js"></script>
   
   <script src="js/world/camera.js"></script>
   
   <script src="js/physics/collide.js"></script>
   <script src="js/physics/overlap.js"></script>
+  <script src="js/physics/forces.js"></script>
 
-  <script src="config.js"></script>
-  <script src="js/textures.js"></script>
   <script src="js/loop.js"></script>
+  <script src="js/loop/loop-pj.js"></script>
+  <script src="js/loop/loop-slime.js"></script>
+  
+  <script src="config.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/textures.js"></script>
   <script src="js/index.js"></script>
 </head>
 
 <body onload="OnStart()">
-
-  <!-- PIXI -->
-  <div id="pixi-container"></div>
-
-  <!-- controles de movimiento -->
-  <div id="controls-left" class="controls-box">
-    <div id="move-back" class="control"></div>
-    <div id="move-front" class="control"></div>
+  
+  <!-- pantalla principal -->
+  <div id="main-screen" class="screen">
+    <div id="btn-start"> Loading... </div>
   </div>
+  
+  
+  
+  <!-- pantalla del juego -->
+  <div id="game-screen" class="screen">
+    <!-- aqui estará el canvas -->
+    <div id="pixi-container"></div>
 
-  <!-- controles de accion -->
-  <div id="controls-right" class="controls-box">
-    <div id="move-up" class="control"></div>
-    <div id="action-atack" class="control"></div>
+    <!-- controles de movimiento -->
+    <div id="controls-left" class="controls-box">
+      <div id="move-back" class="control"></div>
+      <div id="move-front" class="control"></div>
+    </div>
+
+    <!-- controles de accion -->
+    <div id="controls-right" class="controls-box">
+      <div id="move-up" class="control"></div>
+      <div id="action-atack" class="control"></div>
+    </div>
   </div>
 
 

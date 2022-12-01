@@ -4,22 +4,21 @@
 
 
 // añadir personaje
-World.prototype.createPj = function (
-    txPrefix, tW
-  ) {
+World.prototype.createPj = function (txPrefix, tW) {
 
   let pj = new AnimatedSprite([resources.box.texture]);
-  let pjId = "pj" + (++this.elementsCreated);
+  let pjId = "pj" + ( ++ this.elementsCreated);
   
   pj.type = "pj";
   pj.txPrefix = txPrefix; // paquete de texturas
-  pj.setTextures(resources[txPrefix + "_quiet"]);
+  pj.setAnimation(resources[txPrefix + "_quiet"]);
   pj.play();
   
   // dimensiones
-  pj.sc = toPx(tW) / pj.texture.width; // escala de personaje para su tamaño
+  pj.sc = tl2px(tW) / pj.texture.width; // escala de personaje para su tamaño
   pj.width = pj.texture.width * pj.sc;
   pj.updateHeightRatio();
+  pj.anchor.set(0.5, 1);
   
   pj.vx = 0; // velocidad en X
   pj.vy = 0; // velocidad en Y
@@ -35,4 +34,9 @@ World.prototype.createPj = function (
   this.pjs[pjId] = pj;
 
   return pj;
+}
+
+
+function loopPj () {
+  
 }

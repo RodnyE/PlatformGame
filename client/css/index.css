@@ -1,66 +1,45 @@
-/* main css */
+/* 
+ * main css 
+ */
+
+
+
+@font-face {
+  font-family: pixel;
+  src: url("../assets/font/pixel.ttf");
+}
+
 
 * {
-	padding: 0;
-	margin: 0;
-	-webkit-user-zoom: none;
-	-webkit-user-select: none;
+  padding: 0;
+  margin: 0;
+  font-family: pixel;
+  
+  user-zoom: none;
+  -webkit-user-zoom: none;
+  
+  user-select: none;
+  -webkit-user-select: none;
 }
 
+
 #canvas {
-	position: fixed;
-	top: 0; 
-	left: 0;
-	width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
+
 /* adaptar pantalla de juego */
 @media (orientation:portrait) {
-	#canvas {
-		height: calc(100vw * (100vw/100vh));
-	}
+  #canvas {
+    width: 100vw;
+    height: calc(100vw * (100vw/100vh));
+  }
 }
 
 @media (orientation:landscape) {
-	#canvas {
-		height: 100vh;
-	}
-}
-
-/* controles */
-.controls-box {
-	position: fixed;
-	padding: 10px;
-	display: flex;
-}
-
-.control {
-	width: 10vw;
-	height: 10vw;
-	background: url("../assets/img/btn-move.png");
-	background-size: 100% 100%;
-	image-rendering: pixelated;
-	margin: 5px;
-	
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 5vw;
-	transition: filter 0.1s;
-}
-.control:active {
-  filter: opacity(0.5) grayscale(1);
-}
-
-#move-back {transform: scaleX(-1)}
-#move-up {transform: rotate(-90deg)}
-#action-atack {background-image: url("../assets/img/btn-atack.png")}
-
-#controls-left {
-	bottom: 0;
-	left: 0;
-}
-
-#controls-right {
-	bottom: 0;
-	right: 0;
+  #canvas {
+    width: 100vw;
+    height: 100vh;
+  }
 }

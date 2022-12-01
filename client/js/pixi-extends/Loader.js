@@ -6,7 +6,13 @@ Loader = PIXI.Loader;
 
 
 // añadir animación
-Loader.prototype.addAnimation = function (name, url, length, animationSpeed) {
+Loader.prototype.addAnimation = function (
+  name, 
+  url, 
+  length, 
+  animationSpeed, 
+  opt = {}
+) {
   let resources = this.resources;
   let list = [];
   
@@ -20,6 +26,7 @@ Loader.prototype.addAnimation = function (name, url, length, animationSpeed) {
   
   list.name = name;
   list.animationSpeed = animationSpeed;
+  list.loop = or(opt.loop, true);
   resources[name] = list;
   
   return this;
