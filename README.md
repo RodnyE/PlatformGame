@@ -1,7 +1,10 @@
 # TerraPixel 
+Ver una [Demo](https://platform-game-rodny.glitch.me)  
+
+
 **(En desarrollo)**  
 Juego de plataformas con Javascript y WebGL mediante [PIXI.js](https://github.com/pixijs/pixijs).
-  
+
   
   
 > _Proyecto solo por diversión_. Dedicado a mi hermano pequeño de 8 años.
